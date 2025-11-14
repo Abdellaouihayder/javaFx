@@ -1,0 +1,30 @@
+.primary-btn {
+    -fx-background-color: #2b3a67;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+}
+
+.secondary-btn {
+    -fx-background-color: #4f6fd9;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+}
+
+.outline-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #2b3a67;
+    -fx-border-width: 2;
+    -fx-text-fill: #2b3a67;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}

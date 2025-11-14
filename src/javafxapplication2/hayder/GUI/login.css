@@ -1,0 +1,73 @@
+/* Card style */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 14, 0, 0, 6);
+    -fx-pref-width: 400;
+}
+
+/* Input fields */
+.input-field {
+    -fx-background-color: #f0f4f8;
+    -fx-background-radius: 10;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14 10 14;
+    -fx-pref-width: 280;
+    -fx-font-size: 14;
+}
+
+.input-field:focused {
+    -fx-border-color: #2c3e50;
+    -fx-background-color: white;
+}
+
+/* Primary button */
+.primary-btn {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 12 28 12 28;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #34495e;
+}
+
+/* Reset button */
+.reset-btn {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 12 28 12 28;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.reset-btn:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Hyperlinks */
+.link {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Smooth transitions */
+.input-field, .primary-btn, .reset-btn, .link {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Optional: logo rounded */
+#logoImage {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10,0,0,2);
+}

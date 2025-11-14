@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="480" prefWidth="520"
+    style="-fx-background-color: linear-gradient(to bottom right, #eef3ff, #dce6f8);"
+    stylesheets="@register.css" xmlns="http://javafx.com/javafx/24.0.1"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="javafxapplication2.hayderController.RegisterController">
+
+    <children>
+        <VBox alignment="CENTER" spacing="25" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+            AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+            <!-- Title -->
+            <Label
+                style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 20 0 0 0;"
+                text="Créer un Compte" />
+
+            <!-- Card -->
+            <VBox alignment="CENTER" spacing="18" styleClass="card">
+                <padding>
+                    <Insets bottom="30" left="40" right="40" top="30" />
+                </padding>
+
+                <!-- Logo -->
+                <ImageView fx:id="logoImage" fitHeight="120" fitWidth="120" pickOnBounds="true"
+                    preserveRatio="true"
+                    style="-fx-background-radius: 60; -fx-border-radius: 60; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10,0,0,2);">
+                    <image>
+                        <Image url="@assetes/logo.png" />
+                    </image>
+                </ImageView>
+
+                <!-- Nom -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@assetes/user.png" />
+                        </image>
+                    </ImageView>
+                    <TextField fx:id="nomField" promptText="Nom" styleClass="input-field"
+                        HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <!-- Prénom -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@assetes/homme-daffaire.png" />
+                        </image>
+                    </ImageView>
+                    <TextField fx:id="prenomField" promptText="Prénom" styleClass="input-field"
+                        HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <!-- Email -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@assetes/email.png" />
+                        </image>
+                    </ImageView>
+                    <TextField fx:id="emailField" promptText="Adresse Email"
+                        styleClass="input-field"
+                        HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <!-- Mot de passe -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@assetes/lock.png" />
+                        </image>
+                    </ImageView>
+                    <PasswordField fx:id="passwordField" promptText="Mot de passe"
+                        styleClass="input-field" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <!-- Répéter mot de passe -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@assetes/reset.png" />
+                        </image>
+                    </ImageView>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Répéter le mot de passe"
+                        styleClass="input-field" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <!-- Buttons -->
+                <HBox alignment="CENTER" spacing="15">
+                    <Button fx:id="signUpButton" styleClass="primary-btn" onAction="#onSignUpClick">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@assetes/signup.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>S'inscrire</text>
+                    </Button>
+
+                    <Button fx:id="resetButton" styleClass="reset-btn" onAction="#onResetClick">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@assetes/reset.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Réinitialiser</text>
+                    </Button>
+                </HBox>
+
+                <!-- Back to login link -->
+                <HBox alignment="CENTER" spacing="5">
+                    <Label style="-fx-text-fill: #7f8c8d;" text="Déjà inscrit ?" />
+                    <HBox alignment="CENTER" spacing="3">
+                        <ImageView fitHeight="16" fitWidth="16">
+                            <image>
+                                <Image url="@assetes/login.png" />
+                            </image>
+                        </ImageView>
+                        <Hyperlink styleClass="link" text="Se connecter"
+                            onAction="#onBackToLoginClick" />
+                    </HBox>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+/* Root VBox */
+.notification-root {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-spacing: 15;
+}
+
+/* Header Label */
+.notification-root > .header-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b3a67;
+}
+
+/* Container for notification items */
+.notification-list {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-background-radius: 10;
+    -fx-spacing: 10;
+}
+
+/* Each notification row */
+.notification-item {
+    -fx-padding: 8;
+    -fx-background-radius: 6;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
+    -fx-cursor: default;
+}
+
+.notification-item:hover {
+    -fx-background-color: #f0f3f7;
+}
+
+/* SVG icon inside notification */
+.notification-item .icon {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+/* Notification text */
+.notification-item .text-label {    
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
