@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<BorderPane prefHeight="750" prefWidth="1200" stylesheets="@responsable_dashboard.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<!-- RESPONSABLE DASHBOARD FXML -->
+<BorderPane prefHeight="750" prefWidth="1200" stylesheets="@responsable_dashboard.css"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="javafxapplication2.hayderController.DashboardResponsableController">
 
     <!-- TOP NAV BAR -->
     <top>
@@ -24,22 +28,19 @@
                 <Label styleClass="nav-title" text="Company Portal" />
                 <Region HBox.hgrow="ALWAYS" />
 
-                <!-- Notifications -->
-                <Button styleClass="nav-btn" text="Notifications">
+                <Button styleClass="nav-btn" text="Notifications" onAction="#onNotifications">
                     <graphic>
                         <SVGPath content="M12 2C10.3 2 9 3.3 9 5V6C6 6 4 8 4 11V16L2 18V19H22V18L20 16V11C20 8 18 6 15 6V5C15 3.3 13.7 2 12 2Z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-                <!-- Dashboard -->
-                <Button styleClass="nav-btn" text="Dashboard">
+                <Button styleClass="nav-btn" text="Dashboard" onAction="#onDashboard">
                     <graphic>
                         <SVGPath content="M3 13h4v-4H3v4zm6 6h4v-10h-4v10zm6-6h4v-4h-4v4z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-                <!-- Profile -->
-                <Button styleClass="nav-btn" text="Profile">
+                <Button styleClass="nav-btn" text="Profile" onAction="#onProfile">
                     <graphic>
                         <SVGPath content="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" styleClass="icon" />
                     </graphic>
@@ -59,46 +60,38 @@
 
             <VBox spacing="10" VBox.vgrow="ALWAYS">
 
-                <!-- Home -->
-                <Button styleClass="sidebar-btn" text="Home">
+                <Button styleClass="sidebar-btn" text="Home" onAction="#onHome">
                     <graphic>
                         <SVGPath content="M10 20V14H14V20H19V12H22L12 3 2 12H5V20H10Z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-                <!-- Manage Job Offers -->
-                <Button styleClass="sidebar-btn" text="Manage Job Offers">
+                <Button styleClass="sidebar-btn" text="Manage Job Offers" onAction="#onManageJobOffers">
                     <graphic>
                         <SVGPath content="M20 6H4V4H20V6ZM20 20H4V18H20V20ZM20 12H4V10H20V12Z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-                <!-- View Candidates -->
-                <Button styleClass="sidebar-btn" text="View Candidates">
+                <Button styleClass="sidebar-btn" text="View Candidates" onAction="#onViewCandidates">
                     <graphic>
                         <SVGPath content="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-                <!-- Company Profile -->
-                <Button styleClass="sidebar-btn" text="Company Profile">
+                <Button styleClass="sidebar-btn" text="Company Profile" onAction="#onCompanyProfile">
                     <graphic>
                         <SVGPath content="M4 22V6H6V22H4ZM8 22V10H10V22H8ZM12 22V14H14V22H12ZM16 22V8H18V22H16ZM20 22V12H22V22H20Z" styleClass="icon" />
                     </graphic>
                 </Button>
 
-
-                <!-- Messages -->
-                <Button styleClass="sidebar-btn" text="Messages">
+                <Button styleClass="sidebar-btn" text="Messages" onAction="#onMessages">
                     <graphic>
                         <SVGPath content="M20 2H4C2.9 2 2 2.9 2 4V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V4C22 2.9 21.1 2 20 2ZM20 6L12 13L4 6H20Z" styleClass="icon" />
                     </graphic>
                 </Button>
-
             </VBox>
 
-            <!-- Logo -->
-            <HBox alignment="CENTER_LEFT" prefHeight="115.0" prefWidth="132.0" spacing="10" style="-fx-background-color: white; -fx-background-radius: 15;" styleClass="logo-bg">
+            <HBox alignment="CENTER_LEFT" prefHeight="115" prefWidth="132" spacing="10" style="-fx-background-color: white; -fx-background-radius: 15;" styleClass="logo-bg">
                 <children>
                     <ImageView fx:id="logoImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
                         <image>
@@ -108,7 +101,6 @@
                 </children>
             </HBox>
 
-            <!-- QR Section -->
             <VBox alignment="CENTER" spacing="8" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10;" styleClass="qr-section">
                 <Label styleClass="qr-label" text="Scan to Contact Admin" />
                 <ImageView fx:id="qrImageView" fitHeight="100" fitWidth="100" preserveRatio="true">
@@ -118,16 +110,14 @@
                 </ImageView>
             </VBox>
 
-             <!-- Logout -->
-             <Button styleClass="logout-btn" text="Logout">
-                 <graphic>
-                     <SVGPath content="M16 17L21 12L16 7V10H8V14H16V17ZM4 4H14V2H4C2.9 2 2 2.9 2 4V20C2 21.1 2.9 22 4 22H14V20H4V4Z" styleClass="icon" />
-                 </graphic>
-             </Button>
+            <Button styleClass="logout-btn" text="Logout" onAction="#onLogout">
+                <graphic>
+                    <SVGPath content="M16 17L21 12L16 7V10H8V14H16V17ZM4 4H14V2H4C2.9 2 2 2.9 2 4V20C2 21.1 2.9 22 4 22H14V20H4V4Z" styleClass="icon" />
+                </graphic>
+            </Button>
         </VBox>
     </left>
 
-    <!-- MAIN CONTENT -->
     <center>
         <StackPane styleClass="main-content">
             <VBox alignment="CENTER" spacing="20">
