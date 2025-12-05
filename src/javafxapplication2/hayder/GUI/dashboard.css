@@ -92,3 +92,14 @@
     -fx-background-radius: 15;
     -fx-padding: 5 10 5 10;
 }
+.sidebar-btn-active {
+    -fx-background-color: #16a085;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}

@@ -64,7 +64,7 @@
 
             <VBox spacing="10">
 
-                <Button styleClass="sidebar-btn" text="Home" onAction="#onHome">
+                <Button styleClass="sidebar-btn-active" text="Home" onAction="#onHome">
                     <graphic>
                         <SVGPath styleClass="icon"
                                  content="M10 20V14H14V20H19V12H22L12 3 2 12H5V20H10Z" />

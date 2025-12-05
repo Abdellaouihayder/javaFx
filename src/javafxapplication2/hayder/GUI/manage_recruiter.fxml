@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="javafxapplication2.hayderController.ManageRecruiterController"
+            stylesheets="@manage_recruiter.css">
+
+    <!-- TOP NAV BAR (same as dashboard) -->
+    <top>
+        <HBox spacing="15" styleClass="nav-bar">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <HBox alignment="CENTER_RIGHT" spacing="25" HBox.hgrow="ALWAYS">
+                <Label styleClass="nav-title" text="Job Portal Admin"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button styleClass="nav-btn" text="Dashboard" onAction="#onDashboard">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M3 13h4v-4H3v4zm6 6h4v-10h-4v10zm6-6h4v-4h-4v4z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="nav-btn" text="Notifications" onAction="#onNotifications">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M12 2C10.3 2 9 3.3 9 5V6C6 6 4 8 4 11V16L2 18V19H22V18L20 16V11C20 8 18 6 15 6V5C15 3.3 13.7 2 12 2Z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="nav-btn" text="Profile" onAction="#onProfile">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                    </graphic>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- SIDEBAR (same as dashboard) -->
+    <left>
+        <VBox spacing="25" styleClass="sidebar">
+            <padding>
+                <Insets top="40" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label styleClass="sidebar-section-title" text="Welcome Admin"/>
+
+            <VBox spacing="10">
+                <Button styleClass="sidebar-btn" text="Home" onAction="#onHome">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M10 20V14H14V20H19V12H22L12 3 2 12H5V20H10Z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="sidebar-btn-active" text="Manage Recruiter" onAction="#onManageRecruiter">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="sidebar-btn" text="Manage Companies" onAction="#onManageCompanies">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M3 13H21V11H3V13ZM3 18H21V16H3V18ZM3 6V8H21V6H3Z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="sidebar-btn" text="Jobs" onAction="#onJobs">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M6 2H18C19.1 2 20 2.9 20 4V8H4V4C4 2.9 4.9 2 6 2ZM4 10H20V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V10ZM9 12H15V18H9V12Z"/>
+                    </graphic>
+                </Button>
+                <Button styleClass="sidebar-btn" text="Manage Candidates" onAction="#onManageCandidates">
+                    <graphic>
+                        <SVGPath styleClass="icon" content="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <!-- LOGO -->
+            <HBox alignment="CENTER_LEFT" spacing="10" prefHeight="115" prefWidth="132" style="-fx-background-color: white; -fx-background-radius: 15;">
+                <ImageView fx:id="logoImage" fitHeight="150" fitWidth="150" preserveRatio="true">
+                    <image>
+                        <Image url="@assetes/logo.png"/>
+                    </image>
+                </ImageView>
+            </HBox>
+
+            <Button styleClass="logout-btn" text="Logout" onAction="#onLogout">
+                <graphic>
+                    <SVGPath styleClass="icon" content="M16 17L21 12L16 7V10H8V14H16V17ZM4 4H14V2H4C2.9 2 2 2.9 2 4V20C2 21.1 2.9 22 4 22H14V20H4V4Z"/>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT (Table + Form) -->
+    <center>
+        <HBox spacing="20" style="-fx-padding: 20; -fx-background-color: #ecf0f1;">
+            <TableView fx:id="tableRecruiters" prefWidth="800" prefHeight="500">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="colNom" text="Nom" prefWidth="120"/>
+                    <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="120"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colPoste" text="Poste" prefWidth="120"/>
+                    <TableColumn fx:id="colDomaine" text="Domaine" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <VBox spacing="15" style="-fx-padding: 10; -fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <Label text="Add / Edit Recruiter" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtId" promptText="R001" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Nom:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtNom" promptText="John" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Prénom:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtPrenom" promptText="Doe" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label text="Email:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtEmail" promptText="john@mail.com" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    <Label text="Password:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <PasswordField fx:id="txtPassword" promptText="••••••" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    <Label text="Poste:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtPoste" promptText="HR Manager" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                    <Label text="Domaine:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtDomaine" promptText="Informatique" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Button text="➕ Add Recruiter" onAction="#addRecruiter" styleClass="btn-add"/>
+                <Button text="✏️ Update Selected" onAction="#updateRecruiter" styleClass="btn-update"/>
+                <Button text="🗑 Delete Selected" onAction="#deleteRecruiter" styleClass="btn-delete"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

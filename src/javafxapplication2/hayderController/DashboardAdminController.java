@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 public class DashboardAdminController {
 
     // ---------------- REAL NAVIGATION BUTTONS ---------------- //
-
     @FXML
     private void onLogout(ActionEvent event) {
         System.out.println("Logout clicked");
@@ -26,29 +25,27 @@ public class DashboardAdminController {
         navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications");
     }
 
-  @FXML
-private void onProfile(ActionEvent event) {
-    System.out.println("Profile clicked");
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafxapplication2/hayder/GUI/profil.fxml"));
-        Parent root = loader.load();
+    @FXML
+    private void onProfile(ActionEvent event) {
+        System.out.println("Profile clicked");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafxapplication2/hayder/GUI/profil.fxml"));
+            Parent root = loader.load();
 
-        // Pass origin info
-        ProfileController controller = loader.getController();
-        controller.setOriginDashboard("admin");
+            // Pass origin info
+            ProfileController controller = loader.getController();
+            controller.setOriginDashboard("admin");
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Profile");
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Profile");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
-
 
     // ---------------- SIMPLE PRINT BUTTONS ---------------- //
-
     @FXML
     private void onDashboard(ActionEvent event) {
         System.out.println("Dashboard clicked");
@@ -61,7 +58,8 @@ private void onProfile(ActionEvent event) {
 
     @FXML
     private void onManageRecruiter(ActionEvent event) {
-        System.out.println("Manage Recruiter clicked");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/manage_recruiter.fxml", "Manage Recruiters");
+
     }
 
     @FXML
