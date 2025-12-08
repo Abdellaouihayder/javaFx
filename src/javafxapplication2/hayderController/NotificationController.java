@@ -26,6 +26,30 @@ public class NotificationController {
     @FXML
     public void initialize() {
         btnRetour.setOnAction(e -> handleRetour());
+      // Style de base
+    btnRetour.setStyle("-fx-background-color: #2b3a67;"
+                     + "-fx-text-fill: white;"
+                     + "-fx-padding: 6 14;"
+                     + "-fx-background-radius: 6;"
+                     + "-fx-font-size: 14px;"
+                     + "-fx-cursor: hand;");
+
+    // Hover effect
+    btnRetour.setOnMouseEntered(e -> btnRetour.setStyle(
+        "-fx-background-color: #1f2a4d;"
+      + "-fx-text-fill: white;"
+      + "-fx-padding: 6 14;"
+      + "-fx-background-radius: 6;"
+      + "-fx-font-size: 14px;"
+      + "-fx-cursor: hand;"));
+
+    btnRetour.setOnMouseExited(e -> btnRetour.setStyle(
+        "-fx-background-color: #2b3a67;"
+      + "-fx-text-fill: white;"
+      + "-fx-padding: 6 14;"
+      + "-fx-background-radius: 6;"
+      + "-fx-font-size: 14px;"
+      + "-fx-cursor: hand;"));
     }
 
   @FXML
