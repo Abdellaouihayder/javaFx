@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayderController/ForgotPasswordController.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayder/GUI/notification.fxml</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayderController/NotificationController.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayder/GUI/notification.css</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayderController/HomeController.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayderController/DashboardAdminController.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/JavaFXApplication2/src/javafxapplication2/hayderController/DashboardResponsableController.java</file>
         </group>
     </open-files>
 </project-private>

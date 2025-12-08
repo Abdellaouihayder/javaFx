@@ -22,7 +22,8 @@ public class DashboardAdminController {
     @FXML
     private void onNotifications(ActionEvent event) {
         System.out.println("Notifications clicked");
-        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications");
+        // Passe "admin" comme previousPage pour NotificationController
+        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications", "admin");
     }
 
     @FXML
@@ -59,7 +60,6 @@ public class DashboardAdminController {
     @FXML
     private void onManageRecruiter(ActionEvent event) {
         navigateTo(event, "/javafxapplication2/hayder/GUI/manage_recruiter.fxml", "Manage Recruiters");
-
     }
 
     @FXML
@@ -78,12 +78,22 @@ public class DashboardAdminController {
     }
 
     // --------------------------------------------------------------- //
-    // ✅ Improved method to navigate to a new FXML page
+    // ✅ Modified navigateTo() with optional previousPage
     // --------------------------------------------------------------- //
     private void navigateTo(ActionEvent event, String fxmlPath, String title) {
+        navigateTo(event, fxmlPath, title, null);
+    }
+
+    private void navigateTo(ActionEvent event, String fxmlPath, String title, String previousPage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
+
+            // Si on navigue vers notification.fxml, on passe previousPage
+            if (fxmlPath.contains("notification.fxml") && previousPage != null) {
+                javafxapplication2.hayderController.NotificationController controller = loader.getController();
+                controller.setPreviousPage(previousPage);
+            }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

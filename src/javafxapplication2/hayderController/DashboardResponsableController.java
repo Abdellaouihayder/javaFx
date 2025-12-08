@@ -23,29 +23,29 @@ public class DashboardResponsableController {
     @FXML
     private void onNotifications(ActionEvent event) {
         System.out.println("Notifications clicked");
-        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications");
+        // Passe "responsable" comme previousPage pour NotificationController
+        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications", "responsable");
     }
 
-  @FXML
-private void onProfile(ActionEvent event) {
-    System.out.println("Profile clicked");
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafxapplication2/hayder/GUI/profil.fxml"));
-        Parent root = loader.load();
+    @FXML
+    private void onProfile(ActionEvent event) {
+        System.out.println("Profile clicked");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafxapplication2/hayder/GUI/profil.fxml"));
+            Parent root = loader.load();
 
-        // Pass origin info
-        ProfileController controller = loader.getController();
-        controller.setOriginDashboard("responsable");
+            // Pass origin info
+            ProfileController controller = loader.getController();
+            controller.setOriginDashboard("responsable");
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Profile");
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Profile");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
-
 
     // ---------------- SIMPLE PRINT BUTTONS ---------------- //
 
@@ -80,12 +80,22 @@ private void onProfile(ActionEvent event) {
     }
 
     // --------------------------------------------------------------- //
-    // ✅ Utility method to load new FXML
+    // ✅ Modified navigateTo() with optional previousPage
     // --------------------------------------------------------------- //
     private void navigateTo(ActionEvent event, String fxmlPath, String title) {
+        navigateTo(event, fxmlPath, title, null);
+    }
+
+    private void navigateTo(ActionEvent event, String fxmlPath, String title, String previousPage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
+
+            // Si on navigue vers notification.fxml, on passe previousPage
+            if (fxmlPath.contains("notification.fxml") && previousPage != null) {
+                javafxapplication2.hayderController.NotificationController controller = loader.getController();
+                controller.setPreviousPage(previousPage);
+            }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
