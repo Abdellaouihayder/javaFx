@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox spacing="10.0" alignment="TOP_LEFT" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recrut.controllers.CompaniesController">
+   <stylesheets>
+      <URL value="@companies.css" />
+   </stylesheets>
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20" />
+   </padding>
+   <children>
+      <Label text="Company Profile Management" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+      <HBox spacing="10" alignment="CENTER_LEFT">
+         <children>
+            <TextField fx:id="searchField" promptText="Search companies..." prefWidth="300" />
+            <Button fx:id="searchBtn" text="Search" onAction="#onSearch" styleClass="search-button" />
+            <Button fx:id="addBtn" text="Add New Company" onAction="#onAdd" styleClass="add-button" />
+            <Button fx:id="allDomainsBtn" text="All Domains" onAction="#onAllDomains" style="-fx-background-color: #ff9800; -fx-text-fill: white;" />
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" prefHeight="600">
+         <content>
+            <FlowPane fx:id="companiesFlow" hgap="15" vgap="15" prefWrapLength="1000" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

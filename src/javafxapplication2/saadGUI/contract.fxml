@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="javafxapplication2.saadeddineController.ContractController"
+      stylesheets="@contract.css"
+      spacing="20"
+      alignment="CENTER"
+      prefWidth="700"
+      prefHeight="600"
+    
+      styleClass="contract-root">
+
+    <Label text="Gestion des Contrats" styleClass="contract-title"/>
+
+    <VBox spacing="15" styleClass="contract-card">
+
+        <VBox spacing="5">
+            <Label text="Nom du Client :" />
+            <TextField fx:id="clientNameField"
+                       promptText="Nom du client"
+                       styleClass="contract-input"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Type de Contrat :" />
+            <!-- ComboBox vide pour Scene Builder -->
+            <ComboBox fx:id="contractTypeBox" styleClass="contract-input"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Date de Début :" />
+            <DatePicker fx:id="startDatePicker" styleClass="contract-input"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Date de Fin :" />
+            <DatePicker fx:id="endDatePicker" styleClass="contract-input"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Salaire :" />
+            <TextField fx:id="salaryField"
+                       promptText="Montant du salaire"
+                       styleClass="contract-input"/>
+        </VBox>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Valider"
+                    fx:id="validateButton"
+                    styleClass="validate-btn"
+                    onAction="#validerContract"/>
+            <Button text="Annuler"
+                    fx:id="cancelButton"
+                    styleClass="cancel-btn"/>
+        </HBox>
+
+    </VBox>
+
+</VBox>

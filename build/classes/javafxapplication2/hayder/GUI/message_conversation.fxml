@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefWidth="550" prefHeight="400"
+            xmlns="http://javafx.com/javafx/21.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="javafxapplication2.hayderController.MessageConversationController"
+             stylesheets="@message_conversation.css"
+            styleClass="conversation-root">
+
+    <top>
+        <Label text="Messagerie - Conversation"
+               styleClass="title-label"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <ListView fx:id="messagesList" />
+    </center>
+
+    <bottom>
+        <HBox spacing="6" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <TextField fx:id="destinataireField" promptText="Destinataire" prefWidth="120"/>
+            <TextField fx:id="messageField" promptText="Votre message…" HBox.hgrow="ALWAYS"/>
+            <Button text="Send" onAction="#envoyerMessage"/>
+            <Button text="Back" onAction="#Back"/>
+                      
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="javafxapplication2.hayderController.EntrepriseController"
+      spacing="20" alignment="CENTER"
+      prefWidth="800" prefHeight="600"
+      stylesheets="@Entreprises.css"
+      styleClass="root">
+
+    <Label text="Gestion des Entreprises" styleClass="title"/>
+
+    <TableView fx:id="entrepriseTable" prefHeight="450" prefWidth="750">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="nameColumn" text="Nom" prefWidth="150"/>
+            <TableColumn fx:id="adresseColumn" text="Adresse" prefWidth="200"/>
+            <TableColumn fx:id="secteurColumn" text="Secteur" prefWidth="150"/>
+            <TableColumn fx:id="offresColumn" text="Nb Offres" prefWidth="100"/>
+            <TableColumn fx:id="postulationsColumn" text="Nb Postulations" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Back" fx:id="backButton" onAction="#BackToDashboard" styleClass="primary-btn"/>
+    </HBox>
+
+</VBox>

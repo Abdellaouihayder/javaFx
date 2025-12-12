@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="javafxapplication2.hayderController.CalendrierController"
+      spacing="20" alignment="CENTER"
+      stylesheets="@calendrier.css"
+      prefWidth="520" prefHeight="600"
+      styleClass="cal-root">
+    <Label text="Calendrier / Planning" styleClass="cal-title"/>
+    <DatePicker fx:id="datePicker" styleClass="input-field"/>
+    <TableView fx:id="eventTable" prefWidth="480" maxHeight="300" styleClass="card">
+        <columns>
+            <TableColumn fx:id="heureColumn" text="Heure" prefWidth="80"/>
+            <TableColumn fx:id="descColumn" text="Événement" prefWidth="260"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="130"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="eventField" promptText="Ajouter un événement…" styleClass="input-field"/>
+        <Button text="ADD" onAction="#ajouterEvenement" styleClass="primary-btn"/>
+        <Button text="Back" onAction="#Back_To_Home" styleClass="primary-btn"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,82 @@
+/* MAIN LAYOUT */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f9fbfc;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.flow-pane {
+    -fx-padding: 10;
+}
+
+/* DOMAIN CARDS */
+.card {
+    -fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    -fx-border-color: #adb5bd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-min-width: 250;
+    -fx-max-width: 300;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.card:hover {
+    -fx-background-color: linear-gradient(to bottom, #e9ecef, #dee2e6);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 6, 0, 0, 3);
+}
+
+/* BUTTONS */
+.Back-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+}
+
+.Back-button:hover {
+    -fx-background-color: #1976d2;
+}
+
+/* FORM BUTTONS (Save + Cancel same size) */
+.form-button {
+    -fx-pref-width: 120;
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+}
+
+.form-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+.cancel-button {
+    -fx-pref-width: 120;
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+    -fx-background-color: #e74c3c !important;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #c0392b !important;
+}
+
+/* RIGHT FORM PANEL */
+#addFormPane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}

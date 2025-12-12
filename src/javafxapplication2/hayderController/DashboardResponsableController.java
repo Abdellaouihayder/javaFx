@@ -13,13 +13,15 @@ import javafx.stage.Stage;
 public class DashboardResponsableController {
 
     // ---------------- REAL NAVIGATION BUTTONS ---------------- //
-
     @FXML
     private void onLogout(ActionEvent event) {
         System.out.println("Logout clicked");
         navigateTo(event, "/javafxapplication2/hayder/GUI/home.fxml", "Home");
     }
-
+   @FXML
+    private void onCalendier(ActionEvent event) {
+        navigateTo(event, "/javafxapplication2/hayder/GUI/calendrier.fxml", "Calendier");
+    }
     @FXML
     private void onNotifications(ActionEvent event) {
         System.out.println("Notifications clicked");
@@ -38,7 +40,7 @@ public class DashboardResponsableController {
             ProfileController controller = loader.getController();
             controller.setOriginDashboard("responsable");
 
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Profile");
             stage.show();
@@ -48,7 +50,6 @@ public class DashboardResponsableController {
     }
 
     // ---------------- SIMPLE PRINT BUTTONS ---------------- //
-
     @FXML
     private void onDashboard(ActionEvent event) {
         System.out.println("Dashboard clicked");
@@ -61,22 +62,23 @@ public class DashboardResponsableController {
 
     @FXML
     private void onManageJobOffers(ActionEvent event) {
-        System.out.println("Manage Job Offers clicked");
+        //System.out.println("Manage Job Offers clicked");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/job.fxml", "job_offers_dashboard", "responsable");
     }
 
     @FXML
-    private void onViewCandidates(ActionEvent event) {
-        System.out.println("View Candidates clicked");
+    private void onContract(ActionEvent event) {
+         navigateTo(event, "/javafxapplication2/hayder/GUI/contract.fxml", "Contacts Managment");
     }
 
     @FXML
     private void onCompanyProfile(ActionEvent event) {
-        System.out.println("Company Profile clicked");
+         navigateTo(event, "/javafxapplication2/hayder/GUI/Entreprises.fxml", "Entreprises List");
     }
 
     @FXML
     private void onMessages(ActionEvent event) {
-        System.out.println("Messages clicked");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/message_conversation.fxml", "Send Message");
     }
 
     // --------------------------------------------------------------- //
@@ -86,21 +88,28 @@ public class DashboardResponsableController {
         navigateTo(event, fxmlPath, title, null);
     }
 
-    private void navigateTo(ActionEvent event, String fxmlPath, String title, String previousPage) {
+    private void navigateTo(ActionEvent event, String fxmlPath, String title, String role) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
 
-            // Si on navigue vers notification.fxml, on passe previousPage
-            if (fxmlPath.contains("notification.fxml") && previousPage != null) {
+            // 🔥 Pass role to JobOffersController
+            if (fxmlPath.contains("job.fxml") && role != null) {
+                javafxapplication2.hayderController.JobOffersController controller = loader.getController();
+                controller.setUserRole(role);
+            }
+
+            // 🔥 Already working: pass role only for notification page
+            if (fxmlPath.contains("notification.fxml") && role != null) {
                 javafxapplication2.hayderController.NotificationController controller = loader.getController();
-                controller.setPreviousPage(previousPage);
+                controller.setPreviousPage(role);
             }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Erreur", "Impossible de charger la page : " + fxmlPath);

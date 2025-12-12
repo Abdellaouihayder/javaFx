@@ -1,13 +1,8 @@
-
 package javafxapplication2.hayderModel;
-
 
 import java.time.LocalDate;
 import javafxapplication2.hayder.Exception.AuthException;
 import javafxapplication2.hayder.Interfaces.Connexion;
-
-
-
 
 public sealed abstract class User implements Connexion permits Admin, Recruteur {
 

@@ -1,0 +1,107 @@
+/* Candidates view styles */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #fbfcfd;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.card {
+    -fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    -fx-border-color: #adb5bd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-min-width: 250;
+    -fx-max-width: 300;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.card:hover {
+    -fx-background-color: linear-gradient(to bottom, #e9ecef, #dee2e6);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 6, 0, 0, 3);
+}
+
+.card .button {
+    -fx-text-fill: white;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 8 15 8 15;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-width: 70px;
+    -fx-min-height: 30px;
+}
+
+.card .view {
+    -fx-background-color: #4caf50;
+}
+
+.card .view:hover {
+    -fx-background-color: #45a049;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+}
+
+.card .view:pressed {
+    -fx-background-color: #3d8b40;
+}
+
+.card .apply {
+    -fx-background-color: #ff9800;
+}
+
+.card .apply:hover {
+    -fx-background-color: #e68900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+}
+
+.card .apply:pressed {
+    -fx-background-color: #cc7a00;
+}
+
+.card .delete {
+    -fx-background-color: #f44336;
+}
+
+.card .delete:hover {
+    -fx-background-color: #d32f2f;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+}
+
+.card .delete:pressed {
+    -fx-background-color: #b71c1c;
+}
+
+.search-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.search-button:hover {
+    -fx-background-color: #1976d2;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.add-button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.add-button:hover {
+    -fx-background-color: #388e3c;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+

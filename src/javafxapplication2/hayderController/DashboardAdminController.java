@@ -64,19 +64,23 @@ public class DashboardAdminController {
 
     @FXML
     private void onManageCompanies(ActionEvent event) {
-        System.out.println("Manage Companies clicked");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/companies.fxml", "admin");
     }
 
     @FXML
     private void onJobs(ActionEvent event) {
-        System.out.println("Jobs clicked");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/job.fxml", "Manage offres", "admin");
     }
 
     @FXML
     private void onManageCandidates(ActionEvent event) {
-        System.out.println("Manage Candidates clicked");
+         navigateTo(event, "/javafxapplication2/hayder/GUI/candidates.fxml", "Manage Condidates");
     }
-
+    
+    @FXML
+    private void onManageDomains(ActionEvent event) {
+        navigateTo(event, "/javafxapplication2/hayder/GUI/domains.fxml", "domains");
+    }
     // --------------------------------------------------------------- //
     // ✅ Modified navigateTo() with optional previousPage
     // --------------------------------------------------------------- //
@@ -84,21 +88,28 @@ public class DashboardAdminController {
         navigateTo(event, fxmlPath, title, null);
     }
 
-    private void navigateTo(ActionEvent event, String fxmlPath, String title, String previousPage) {
+    private void navigateTo(ActionEvent event, String fxmlPath, String title, String role) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
 
-            // Si on navigue vers notification.fxml, on passe previousPage
-            if (fxmlPath.contains("notification.fxml") && previousPage != null) {
+            // 🔥 Pass role to JobOffersController
+            if (fxmlPath.contains("job.fxml") && role != null) {
+                javafxapplication2.hayderController.JobOffersController controller = loader.getController();
+                controller.setUserRole(role);
+            }
+
+            // 🔥 Already working: pass role only for notification page
+            if (fxmlPath.contains("notification.fxml") && role != null) {
                 javafxapplication2.hayderController.NotificationController controller = loader.getController();
-                controller.setPreviousPage(previousPage);
+                controller.setPreviousPage(role);
             }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Erreur", "Impossible de charger la page : " + fxmlPath);

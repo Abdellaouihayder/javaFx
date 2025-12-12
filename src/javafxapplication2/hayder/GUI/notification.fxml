@@ -16,20 +16,6 @@
       prefWidth="400" prefHeight="600"
     fx:controller="javafxapplication2.hayderController.NotificationController"
 >
-
-    <!-- Bouton Retour -->
-    <Button fx:id="btnRetour"
-            text="⟵ Retour"
-            styleClass="btn-retour"
-            alignment="CENTER_LEFT"
-            onAction="#handleRetour"
-            style=" -fx-background-color: #2b3a67;
-    -fx-text-fill: white;
-    -fx-padding: 6 14;
-    -fx-background-radius: 6;
-    -fx-font-size: 14px;
-    -fx-cursor: hand;"
-            />
     <Label text="Notifications" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2b3a67;" />
 
     <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-background-radius: 10;">
@@ -100,4 +86,18 @@
         </HBox>
     </VBox>
 
+    <!-- Bouton Retour -->
+    <Button fx:id="btnRetour"
+            text="⟵ Retour"
+            styleClass="btn-retour"
+            alignment="CENTER_LEFT"
+            onAction="#handleRetour"
+            style=" -fx-background-color: #2b3a67;
+    -fx-text-fill: white;
+    -fx-padding: 6 14;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;"
+            />
+    
 </VBox>

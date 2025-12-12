@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox spacing="10.0" alignment="TOP_LEFT" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recrut.controllers.CandidatesController">
+   <stylesheets>
+      <URL value="@candidates.css" />
+   </stylesheets>
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20" />
+   </padding>
+   <children>
+      <Label text="Candidates Management" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+      <HBox spacing="10" alignment="CENTER_LEFT">
+         <children>
+            <TextField fx:id="searchField" promptText="Search candidates..." prefWidth="300" />
+            <Button fx:id="BackToHome" text="Back" onAction="#Back To Home" styleClass="search-button" />
+            <Button fx:id="addBtn" text="Add Candidate" onAction="#onAdd" styleClass="add-button" />
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" prefHeight="600">
+         <content>
+            <FlowPane fx:id="candidatesFlow" hgap="15" vgap="15" prefWrapLength="1000" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

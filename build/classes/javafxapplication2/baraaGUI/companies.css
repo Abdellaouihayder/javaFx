@@ -1,0 +1,111 @@
+/* Companies view styles (backup) */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #fbfbfb;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 15;
+    -fx-min-width: 250;
+    -fx-max-width: 300;
+}
+
+.card .button {
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-width: 80px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.card .button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0, 0, 2);
+}
+
+.card .button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 1, 0, 0, 0);
+}
+
+/* Specific button styles */
+.card .button.delete {
+    -fx-background-color: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+.card .button.delete:hover {
+    -fx-background-color: linear-gradient(to bottom, #e53935, #c62828);
+}
+
+.card .button.view-offers {
+    -fx-background-color: linear-gradient(to bottom, #2196f3, #1976d2);
+}
+
+.card .button.view-offers:hover {
+    -fx-background-color: linear-gradient(to bottom, #42a5f5, #1565c0);
+}
+
+.card .button.domain {
+    -fx-background-color: linear-gradient(to bottom, #ff9800, #f57c00);
+}
+
+.card .button.domain:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffb74d, #ef6c00);
+}
+
+.card .button.add {
+    -fx-background-color: linear-gradient(to bottom, #4caf50, #388e3c);
+}
+
+.card .button.add:hover {
+    -fx-background-color: linear-gradient(to bottom, #66bb6a, #2e7d32);
+}
+
+.card .button.remove {
+    -fx-background-color: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+.card .button.remove:hover {
+    -fx-background-color: linear-gradient(to bottom, #e53935, #c62828);
+}
+
+/* Top-level buttons */
+.search-button {
+    -fx-background-color: linear-gradient(to bottom, #2196F3, #1976D2);
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+.search-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #1976D2, #2196F3);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}
+
+.add-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #45a049);
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+.add-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #45a049, #4CAF50);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}

@@ -136,7 +136,7 @@ public class ManageRecruiterController {
 
     @FXML
     private void onNotifications(ActionEvent event) {
-        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/notification.fxml", "Notifications","admin");
     }
 
     @FXML
@@ -171,19 +171,22 @@ public class ManageRecruiterController {
 
     @FXML
     private void onManageCompanies(ActionEvent event) {
-        navigateTo(event, "/javafxapplication2/hayder/GUI/manage_companies.fxml", "Manage Companies");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/companies.fxml", "Manage Companies");
     }
 
     @FXML
     private void onJobs(ActionEvent event) {
-        navigateTo(event, "/javafxapplication2/hayder/GUI/jobs.fxml", "Jobs");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/job.fxml", "Manage offres", "admin");
     }
 
     @FXML
     private void onManageCandidates(ActionEvent event) {
-        navigateTo(event, "/javafxapplication2/hayder/GUI/manage_candidates.fxml", "Manage Candidates");
+        navigateTo(event, "/javafxapplication2/hayder/GUI/candidates.fxml", "Manage Candidates");
     }
-
+     @FXML
+    private void onManageDomains(ActionEvent event) {
+        navigateTo(event, "/javafxapplication2/hayder/GUI/domains.fxml", "domains");
+    }
     // -------------------- NAVIGATION HELPER ----------------
     private void navigateTo(ActionEvent event, String fxmlPath, String title) {
         try {
@@ -199,4 +202,32 @@ public class ManageRecruiterController {
             showAlert("Erreur", "Impossible de charger la page : " + fxmlPath);
         }
     }
+      private void navigateTo(ActionEvent event, String fxmlPath, String title, String role) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+
+            // 🔥 Pass role to JobOffersController
+            if (fxmlPath.contains("job.fxml") && role != null) {
+                javafxapplication2.hayderController.JobOffersController controller = loader.getController();
+                controller.setUserRole(role);
+            }
+
+            // 🔥 Already working: pass role only for notification page
+            if (fxmlPath.contains("notification.fxml") && role != null) {
+                javafxapplication2.hayderController.NotificationController controller = loader.getController();
+                controller.setPreviousPage(role);
+            }
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle(title);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Erreur", "Impossible de charger la page : " + fxmlPath);
+        }
+    }
+ 
 }
